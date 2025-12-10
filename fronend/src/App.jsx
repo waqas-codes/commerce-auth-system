@@ -8,6 +8,9 @@ import Products from './pages/Products'
 import './App.css'
 import Navbar from './components/Navbar'
 import { Route, Routes } from 'react-router-dom'
+import Login from './components/Login'
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function App() {
 
 
@@ -15,6 +18,8 @@ function App() {
   return (
     <>
       <Navbar />
+      <ToastContainer />
+      <Login />
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/about' element={<About/>}/>

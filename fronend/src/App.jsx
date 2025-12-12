@@ -24,7 +24,7 @@ function App() {
       { login && <Navbar /> }
       <Routes>
         <Route path='/' element={<Signin setLogin={setLogin} />}/>
-        <Route path='/login' element={<Login setLogin={setl} />}/>
+        <Route path='/login' element={<Login setLogin={setLogin} />}/>
         <Route path='/home' element={<Home/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/products' element={<Products/>}/>

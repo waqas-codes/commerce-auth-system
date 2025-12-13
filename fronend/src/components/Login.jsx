@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { toast } from "react-toastify";
 
-const Login = () => {
+const Login = ({setLogin}) => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const navigate = useNavigate()
@@ -16,6 +16,7 @@ const Login = () => {
             password
         }).then(res => {
             toast.success("Login successful!");
+            setLogin(true)
             navigate("/home")
         })
         .catch(err => toast.error(err.response?.data || "Invalid email or password"))

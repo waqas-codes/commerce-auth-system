@@ -14,14 +14,17 @@ import "react-toastify/dist/ReactToastify.css";
 import Login from './components/Login'
 function App() {
 
+  const [login ,setLogin] = useState(false)
+
+
 
   return (
     <>
       <ToastContainer />
-      {/* <Login /> */}
+      { login && <Navbar /> }
       <Routes>
-        <Route path='/' element={<Signin />}/>
-        <Route path='/login' element={<Login />}/>
+        <Route path='/' element={<Signin setLogin={setLogin} />}/>
+        <Route path='/login' element={<Login setLogin={setLogin} />}/>
         <Route path='/home' element={<Home/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/products' element={<Products/>}/>

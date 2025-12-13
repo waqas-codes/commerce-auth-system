@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import axios from 'axios'
 import { toast } from "react-toastify";
-const Signin = () => {
+const Signin = ({setLogin}) => {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -19,6 +19,7 @@ const Signin = () => {
             address
         }).then(res => {
             toast.success(`${res.data.email} : is sucessfully registered!`)
+            setLogin(true)
             setName("")
             setEmail("")
             setPassword("")

@@ -14,7 +14,7 @@ const Navbar = () => {
 
                     <li>
                         <NavLink
-                            to="/"
+                            to="/home"
                             className={({ isActive }) =>
                                 `
                                 relative pb-1 transition duration-300

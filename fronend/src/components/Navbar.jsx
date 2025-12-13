@@ -1,7 +1,19 @@
 import React from 'react'
 import { NavLink } from "react-router-dom"
-
+import { toast } from 'react-toastify'
+import { useNavigate } from 'react-router-dom'
 const Navbar = () => {
+    const navigate = useNavigate()
+    const handleClick = (e) => {
+        e.preventDefault();
+        const token = localStorage.getItem("token")
+
+        if(!token) toast.error("Already logged out!")
+
+        localStorage.removeItem("token")
+        toast.warning("logged out")
+        navigate("/login")
+    }
     return (
         <div className="bg-[#0B2E33] h-20 flex items-center shadow-md">
             <nav className="w-full px-10 flex justify-between items-center text-white">
@@ -79,7 +91,9 @@ const Navbar = () => {
                 </ul>
 
                 {/* Logout Button */}
-                <button className="bg-transparent border-1 px-5 py-2 rounded-md font-medium hover:bg-[#0fa66f] hover: cursor-pointer transition duration-200">
+                <button className="bg-transparent border-1 px-5 py-2 rounded-md font-medium hover:bg-[#0fa66f] hover: cursor-pointer transition duration-200"
+                onClick={handleClick}
+                >
                     Logout
                 </button>
 

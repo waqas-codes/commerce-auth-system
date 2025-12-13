@@ -15,6 +15,7 @@ const Login = ({setLogin}) => {
             email,
             password
         }).then(res => {
+            localStorage.setItem("token", res.data)
             toast.success("Login successful!");
             setLogin(true)
             navigate("/home")

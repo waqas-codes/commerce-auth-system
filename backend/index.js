@@ -8,6 +8,12 @@ const app = express();
 app.use(cors())
 const PORT = process.env.PORT || 3001
 
+const corsOptions = {
+    exposedHeaders: ['Content-Length', 'token', 'Authorization'],
+    origin: 'http://localhost:5173'
+}
+app.use(cors(corsOptions))
+
 mongoose.connect(`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.svlmqsf.mongodb.net/?appName=Cluster0`)
 
 app.use(express.json())

@@ -57,9 +57,9 @@ router.post("/login", async (req, res) => {
     const compare = await bcrypt.compare(password, user.password)
     if(!compare) return res.status(400).send("password is incorrect!")
 
-    res.send("User is logged in")
-    // const token = jwt.sign({email: user.email}, process.env.TOKEN_SECRET)
-    // res.header("token-auth", token).send(token)
+    // res.send("User is logged in")
+    const token = jwt.sign({email: user.email}, process.env.TOKEN_SECRET)
+    res.header("token-auth", token).send(token)
 
     // res.send(token)
 

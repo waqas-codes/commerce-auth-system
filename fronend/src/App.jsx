@@ -8,20 +8,21 @@ import Products from './pages/Products'
 import './App.css'
 import Navbar from './components/Navbar'
 import { Route, Routes } from 'react-router-dom'
-import Login from './components/Login'
+import Signin from './components/Signin'
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Login from './components/Login'
 function App() {
-
 
 
   return (
     <>
-      <Navbar />
       <ToastContainer />
-      <Login />
+      {/* <Login /> */}
       <Routes>
-        <Route path='/' element={<Home/>}/>
+        <Route path='/' element={<Signin />}/>
+        <Route path='/login' element={<Login />}/>
+        <Route path='/home' element={<Home/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/products' element={<Products/>}/>
         <Route path='/contact' element={<Contact/>}/>

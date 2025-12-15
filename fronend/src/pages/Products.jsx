@@ -7,11 +7,12 @@ const Products = () => {
   useEffect(() => {
 
     const token = localStorage.getItem("token")
+    console.log(`token is : ${token}`)
     if(!token) toast.error("please loggin first!")
 
     axios.get("http://localhost:3001/api/products", {
       headers: {
-        token: token
+        "token-auth": token
       }
     })
       .then(res => {
@@ -20,7 +21,7 @@ const Products = () => {
       }).catch(error => {
         console.log(error)
       })
-  }, [])
+  }, [products])
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">

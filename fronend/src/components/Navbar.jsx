@@ -12,7 +12,7 @@ const Navbar = () => {
 
         localStorage.removeItem("token")
         toast.warning("logged out")
-        navigate("/login")
+        navigate("/home")
     }
     return (
         <div className="bg-[#0B2E33] h-20 flex items-center shadow-md">

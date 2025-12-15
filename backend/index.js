@@ -1,6 +1,7 @@
 import express from 'express'
 import router from './routes/user.js';
 import productRouter from './routes/products.js'
+import productRoute from "./routes/product.js"
 import mongoose from 'mongoose';
 import dotenv from 'dotenv'
 import cors from 'cors'
@@ -21,6 +22,7 @@ app.use(express.json())
 
 app.use("/api/user", router)
 app.use("/api/products", productRouter)
+app.use("/api/product", productRoute)
 
 app.listen(PORT, () => {
     console.log(`server is running on port ${PORT}`);    

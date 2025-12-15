@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { toast } from 'react-toastify'
+import { Link } from 'react-router-dom'
 const Products = () => {
   const [products, setProducts] = useState([])
 
@@ -21,7 +22,7 @@ const Products = () => {
       }).catch(error => {
         console.log(error)
       })
-  }, [products])
+  }, [])
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
@@ -41,12 +42,8 @@ const Products = () => {
           className="w-full h-40 object-cover rounded-xl mb-4"
         />
 
-        <p className="text-sm text-gray-500 mb-1">
-          <strong>ID:</strong> {product.id}
-        </p>
-
-        <h3 className="text-lg font-semibold text-gray-800 mb-2">
-          {product.title}
+        <h3 className="text-lg font-semibold text-gray-800 mb-2 ">
+          <Link to={'/product/'+product.id}>{product.title}</Link>
         </h3>
 
         <p className="text-xl font-bold text-green-600">

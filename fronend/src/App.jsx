@@ -12,6 +12,7 @@ import Signin from './components/Signin'
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Login from './components/Login'
+import Product from './pages/Product'
 function App() {
 
   const [login ,setLogin] = useState(false)
@@ -28,6 +29,7 @@ function App() {
         <Route path='/home' element={<Home/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/products' element={<Products/>}/>
+        <Route path='/product/:id' element={<Product />} />
         <Route path='/contact' element={<Contact/>}/>
       </Routes>
     </>

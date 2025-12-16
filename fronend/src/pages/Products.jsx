@@ -42,7 +42,7 @@ const Products = () => {
           className="w-full h-40 object-cover rounded-xl mb-4"
         />
 
-        <h3 className="text-lg font-semibold text-gray-800 mb-2 ">
+        <h3 className="text-lg font-semibold text-gray-800 mb-2 hover:text-blue-500">
           <Link to={'/product/'+product.id}>{product.title}</Link>
         </h3>
 

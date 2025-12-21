@@ -13,11 +13,10 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Login from './components/Login'
 import Product from './pages/Product'
+
 function App() {
 
   const [login ,setLogin] = useState(false)
-
-
 
   return (
     <>
